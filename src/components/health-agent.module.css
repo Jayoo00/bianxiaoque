@@ -1,0 +1,599 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 20px 16px 40px;
+}
+
+.glowOne,
+.glowTwo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(54px);
+  pointer-events: none;
+}
+
+.glowOne {
+  top: -42px;
+  right: -30px;
+  width: 220px;
+  height: 220px;
+  background: rgba(203, 232, 215, 0.58);
+  animation: drift 12s ease-in-out infinite;
+}
+
+.glowTwo {
+  left: -48px;
+  bottom: 120px;
+  width: 250px;
+  height: 250px;
+  background: rgba(243, 220, 178, 0.42);
+  animation: drift 14s ease-in-out infinite reverse;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 480px);
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 14px;
+}
+
+.brandWrap,
+.progressText,
+.questionMeta,
+.resultHeader,
+.chips,
+.multiFooter,
+.badge {
+  display: flex;
+  align-items: center;
+}
+
+.brandWrap {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 2px 0;
+}
+
+.brand,
+.badgeLabel,
+.questionTag,
+.questionSource,
+.resultEyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand {
+  color: #284034;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.mark {
+  margin: 0 1px 0 2px;
+  font-size: 10px;
+  vertical-align: text-top;
+}
+
+.badge {
+  flex-shrink: 0;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(108, 138, 120, 0.14);
+  color: #426051;
+  box-shadow: 0 10px 26px rgba(62, 79, 68, 0.08);
+}
+
+.badgeLabel {
+  font-size: 10px;
+  color: rgba(66, 96, 81, 0.7);
+}
+
+.badge strong {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.chatFrame,
+.reportCard {
+  border: 1px solid rgba(118, 137, 125, 0.14);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow:
+    0 20px 48px rgba(55, 74, 61, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+}
+
+.chatFrame {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-height: min(68vh, 760px);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progressRow,
+.composer {
+  padding: 16px 16px 0;
+}
+
+.progressRow {
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(111, 129, 118, 0.1);
+}
+
+.progressText {
+  justify-content: space-between;
+  color: #4f6458;
+  font-size: 12px;
+}
+
+.progressText strong {
+  color: #2f4638;
+  font-size: 12px;
+}
+
+.progressBar,
+.scoreBar {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(153, 173, 160, 0.18);
+}
+
+.progressBar {
+  height: 8px;
+  margin-top: 10px;
+}
+
+.progressValue,
+.scoreFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+}
+
+.progressValue {
+  background: linear-gradient(90deg, #7db091 0%, #4f7a61 100%);
+}
+
+.transcript {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 0;
+  padding: 18px 16px;
+}
+
+.transcriptTail {
+  height: 1px;
+}
+
+.contextStrip {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(247, 248, 243, 0.96);
+  border: 1px solid rgba(111, 129, 118, 0.1);
+  color: rgba(44, 63, 51, 0.78);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.assistantBubble,
+.userBubble,
+.pendingBubble {
+  max-width: 88%;
+  padding: 14px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  line-height: 1.78;
+  animation: riseIn 0.42s ease both;
+}
+
+.assistantBubble,
+.pendingBubble {
+  justify-self: start;
+  border-top-left-radius: 8px;
+}
+
+.assistantBubble {
+  color: #2f4638;
+  background: linear-gradient(180deg, rgba(247, 250, 245, 0.96), rgba(240, 245, 239, 0.92));
+  border: 1px solid rgba(108, 138, 120, 0.14);
+}
+
+.pendingBubble {
+  color: rgba(47, 70, 56, 0.72);
+  background: rgba(245, 245, 242, 0.92);
+  border: 1px dashed rgba(108, 138, 120, 0.2);
+}
+
+.userBubble {
+  justify-self: end;
+  border-top-right-radius: 8px;
+  color: #f6f4ef;
+  background: linear-gradient(180deg, #507362 0%, #3e5a4c 100%);
+  box-shadow: 0 12px 28px rgba(53, 77, 64, 0.16);
+}
+
+.composer {
+  padding-top: 14px;
+  padding-bottom: 16px;
+  border-top: 1px solid rgba(111, 129, 118, 0.1);
+  background: rgba(253, 252, 247, 0.9);
+  scroll-margin-bottom: 18px;
+}
+
+.questionMeta,
+.resultHeader,
+.multiFooter {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.questionTag {
+  color: #4f6a59;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.questionSource {
+  color: rgba(79, 100, 88, 0.72);
+  font-size: 10px;
+}
+
+.questionTitle,
+.resultTitle {
+  color: #22372a;
+  line-height: 1.42;
+}
+
+.questionTitle {
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.questionDescription,
+.paragraph,
+.lead,
+.recommendationCard p,
+.tip,
+.resultFooter p {
+  color: rgba(39, 58, 47, 0.8);
+  line-height: 1.78;
+}
+
+.questionDescription {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.optionList {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.dateComposer {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.dateHint {
+  color: rgba(48, 71, 58, 0.72);
+  font-size: 12px;
+}
+
+.datePickerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.dateField {
+  display: grid;
+  gap: 8px;
+}
+
+.dateField span {
+  color: #4f6458;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dateSelect {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 14px;
+  border: 1px solid rgba(126, 143, 131, 0.16);
+  border-radius: 18px;
+  background: #ffffff;
+  color: #30473a;
+  font: inherit;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(48, 71, 58, 0.58) 50%),
+    linear-gradient(135deg, rgba(48, 71, 58, 0.58) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 2px),
+    calc(100% - 12px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.dateSelect:disabled {
+  opacity: 0.6;
+}
+
+.optionButton,
+.optionSelected,
+.submitButton,
+.restartButton {
+  appearance: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.optionButton,
+.optionSelected {
+  width: 100%;
+  text-align: left;
+  padding: 14px 15px;
+  border-radius: 18px;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.optionButton {
+  border: 1px solid rgba(126, 143, 131, 0.16);
+  background: #ffffff;
+  color: #30473a;
+}
+
+.optionSelected {
+  border: 1px solid rgba(91, 130, 104, 0.3);
+  background: linear-gradient(180deg, rgba(234, 246, 238, 0.9), rgba(224, 238, 229, 0.9));
+  color: #264034;
+  box-shadow: 0 10px 24px rgba(88, 127, 100, 0.12);
+  transform: translateY(-1px);
+}
+
+.optionButton:disabled,
+.optionSelected:disabled,
+.submitButton:disabled,
+.restartButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.optionButton span,
+.optionSelected span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.optionButton small,
+.optionSelected small {
+  display: block;
+  margin-top: 4px;
+  color: rgba(48, 71, 58, 0.7);
+}
+
+.multiFooter {
+  margin-top: 16px;
+  color: rgba(48, 71, 58, 0.72);
+  font-size: 12px;
+}
+
+.submitButton,
+.restartButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4d725f 0%, #355243 100%);
+  color: #f7f4ee;
+  box-shadow: 0 10px 20px rgba(53, 82, 67, 0.18);
+}
+
+.reportCard {
+  margin-top: 16px;
+  padding: 18px 16px 20px;
+  border-radius: 28px;
+  animation: riseIn 0.5s ease both;
+}
+
+.resultEyebrow {
+  color: #527060;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.resultTitle {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.chips {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.chip,
+.chipSoft {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.chip {
+  background: rgba(91, 130, 104, 0.12);
+  color: #355243;
+  font-weight: 700;
+}
+
+.chipSoft {
+  background: rgba(202, 214, 204, 0.22);
+  color: #4e6558;
+}
+
+.lead {
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+.paragraph {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.scoreBlock {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.scoreRow {
+  display: grid;
+  grid-template-columns: 86px 1fr 32px;
+  align-items: center;
+  gap: 10px;
+  color: #31493b;
+  font-size: 12px;
+}
+
+.scoreBar {
+  height: 7px;
+}
+
+.scoreFill {
+  background: linear-gradient(90deg, #d0c38e 0%, #71936d 100%);
+}
+
+.scoreRow strong {
+  text-align: right;
+}
+
+.section {
+  margin-top: 22px;
+}
+
+.section h3 {
+  color: #22372a;
+  font-size: 17px;
+}
+
+.recommendationList {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.recommendationCard {
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(248, 249, 245, 0.98), rgba(242, 244, 239, 0.98));
+  border: 1px solid rgba(113, 130, 118, 0.12);
+}
+
+.recommendationCard strong {
+  display: block;
+  color: #30473a;
+  font-size: 14px;
+}
+
+.recommendationCard p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.tip {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(237, 241, 234, 0.92);
+  font-size: 14px;
+}
+
+.resultFooter {
+  display: grid;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(111, 129, 118, 0.12);
+}
+
+.resultFooter p {
+  font-size: 12px;
+}
+
+.captureNotice {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(241, 245, 238, 0.94);
+  color: #30473a;
+  font-weight: 600;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(10px, 14px, 0) scale(1.06);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .brandWrap {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .badge {
+    width: fit-content;
+  }
+
+  .chatFrame {
+    min-height: 70vh;
+  }
+
+  .datePickerGrid {
+    grid-template-columns: 1fr;
+  }
+}
