@@ -1,0 +1,57 @@
+:root {
+  --background: #f3eedf;
+  --foreground: #22372a;
+}
+
+html {
+  height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(208, 232, 215, 0.62), transparent 32%),
+    radial-gradient(circle at right 14%, rgba(245, 229, 187, 0.44), transparent 24%),
+    linear-gradient(180deg, #f6f1e6 0%, #f2eee4 48%, #eef2eb 100%);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  background: transparent;
+  font-family:
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "HarmonyOS Sans SC",
+    "Source Han Sans SC",
+    "Noto Sans SC",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(120, 158, 132, 0.22);
+}
